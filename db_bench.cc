@@ -1,7 +1,3 @@
-// Copyright (c) 2011 The LevelDB Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file. See the AUTHORS file for names of contributors.
-
 #include <sys/types.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,12 +21,7 @@
 #include <limits.h>
 #include<fstream>
 
-//#include "generator.h"
-
 //using namespace std;
-
-
-
 
 
 namespace generator{
@@ -242,7 +233,7 @@ public:
 	std::string nextString()
 	{
 		char buf[100];
-		sprintf(buf, "%d", nextInt());//����buf��
+		sprintf(buf, "%d", nextInt());
 		std::string s = buf;
 		return s;
 	}
@@ -719,7 +710,6 @@ public:
 	 * @param max The largest integer to generate in the sequence.
 	 * @param _zipfianconstant The zipfian constant to use.
 	 */
-	    //���ҵ�
   ScrambledZipfianGenerator(long min, long max, double _zipfianconstant)
 	{
 		_min=min;
@@ -882,7 +872,7 @@ public:
 //      fill_Zipsk         -- fill_skewed
 //      fill_ZipScr        --fill_Scramble
 //      fill_Uniform       --fill_Uniform
-//      fill_YCSBKey
+//      fill_YCSBKey	  //something wrong with it ： TODO
 //      readwhilezipK      --readwhilezipskewed
 //      readwhilezipS      --readwhilezipScramble
 //      readwhileUni      --readwhilezipuniform
@@ -916,9 +906,7 @@ public:
 //      sstables    -- Print sstable info
 //      heapprofile -- Dump a heap profile (if supported by this port)
 static const char* FLAGS_benchmarks =
-    
-
-
+   
     //"fill_YCSBKey,"       //newly created
     "fill_Zipsk,"         //newly created
     "fill_ZipScr,"        //newly created
@@ -927,13 +915,6 @@ static const char* FLAGS_benchmarks =
     "read&zipS,"      //newly created
     "read&Uni,"       //newly created
     
-    
-    
-
-
-
-
-
     "fillseq,"
     "fillrandom,"
     "fillsync,"
@@ -1359,8 +1340,6 @@ class Benchmark {
         num_ /= 10000;
         if (num_ < 1) num_ = 1;
       }
-
-
       else if (name == Slice("fillseq")) {
         fresh_db = true;
         method = &Benchmark::WriteSeq;
@@ -1372,10 +1351,6 @@ class Benchmark {
         fresh_db = true;
         method = &Benchmark::WriteRandom;
       }           
-
-
-
-
 
 
         else if (name == Slice("fill_Zipsk")) {
@@ -1409,12 +1384,6 @@ class Benchmark {
         num_threads++;  // Add extra thread for writing
         method = &Benchmark::ReadWhileWritingUni;
       }
-
-
-
-
-
-
 
 
 
@@ -1698,23 +1667,6 @@ class Benchmark {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   void Write_skewed(ThreadState* thread){
     DoWrite_zipfian(thread,true);
   }
@@ -1837,9 +1789,6 @@ void DoWrite_Y_U(ThreadState* thread, bool seq) {
     thread->stats.AddBytes(bytes);
     openfile.close();
   }
-
-
-
 
 
 
