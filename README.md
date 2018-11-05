@@ -1,7 +1,7 @@
 # LevelDB_Benchmark
 A benchmark mixed YCSB key generator with standard db_bench
 
-### what you need is to replcaed the old db_bench.cc with this one and  compiling .
+### what you need is to replace the old db_bench.cc with this one and  compiling .
 
 #### new params: --benchmarks
     "fill_Zipsk,"         //fill db by Skewedzipfian-style key 
