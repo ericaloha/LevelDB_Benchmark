@@ -13,7 +13,7 @@ A benchmark mixed YCSB key generator with standard db_bench
     
 #### other params used as usual
 
-#### I also add Lantency info in this benchmarks,
+#### I also add Latency info in this benchmarks,
      everytime you run fill_Zipsk , ZipScr or fill_Uniform, a lantency file will created in
      "/home/leveldb/LogDir/lantency_x.txt."(you can change the path by your need )
      The latency file describes latency（microsecond） per write_operation 
